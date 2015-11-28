@@ -1,7 +1,5 @@
 package br.com.inoutcomes.testes;
 
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import br.com.inoutcomes.service.TwitterService;

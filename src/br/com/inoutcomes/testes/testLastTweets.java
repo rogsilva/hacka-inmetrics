@@ -1,8 +1,9 @@
-package br.com.inoutcomes.service;
+package br.com.inoutcomes.testes;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.inoutcomes.service.TwitterService;
 import twitter4j.Status;
 
 public class testLastTweets {
@@ -11,8 +12,8 @@ public class testLastTweets {
 
 		TwitterService ts = new TwitterService();
 
-		List<Status> lista = new ArrayList();
-		lista = ts.getLastNStatuses("1eandro", 759);
+		List<Status> lista = new ArrayList<Status>();
+		lista = ts.getLastNStatuses("1eandro", 15);
 
 		int count = 1;
 		for (Status s : lista) {

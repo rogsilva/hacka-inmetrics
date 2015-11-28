@@ -10,6 +10,7 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.User;
 import twitter4j.conf.ConfigurationBuilder;
 
 public class TwitterService {
@@ -70,7 +71,7 @@ public class TwitterService {
 			// for que vai percorrer as pages e ir populando na lista
 			for (int i = 1; i <= pagesIndex; i++) {
 
-				if (i == pagesIndex) {
+				if (i == pagesIndex && qntStatus != 100) {
 					p.setCount(qntStatus % 100);
 				}
 
@@ -90,5 +91,36 @@ public class TwitterService {
 
 		return allStatus;
 	}
+	
+	
+	
+	
+	public int getFollowersCount(String name) {
+		int count = 0;
+		try {
+			User user = new TwitterService().getTwitterObject().showUser(name);
+			count = user.getFollowersCount();
+		} catch (TwitterException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
+	
+	
+	
+	
+	public int getHeartAmount(String name, int qntStatus) {
+		int count = 0;
+		List<Status> allStatus = getLastNStatuses(name, qntStatus);
+		for (Status s : allStatus) {
+			count += s.getFavoriteCount();
+		}
+		return count;
+	}
+	
+	
+	
 
 }
