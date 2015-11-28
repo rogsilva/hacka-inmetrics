@@ -5,6 +5,7 @@ import java.util.List;
 
 import br.com.inoutcomes.beans.DataSource;
 import br.com.inoutcomes.service.FacebookService;
+import br.com.inoutcomes.service.TwitterService;
 
 public class FrameworkBO 
 {
@@ -20,9 +21,11 @@ public class FrameworkBO
 		
 		List<DataSource> list = new ArrayList<DataSource>();
 		
-		FacebookService face = new FacebookService();
-		list.add(face.getDataSource(pageName));
+		FacebookService facebook = new FacebookService();
+		list.add(facebook.getDataSource(pageName));
 		
+		TwitterService twitter = new TwitterService();
+		list.add(twitter.getDataSource(pageName));
 		
 		return list;
 	}

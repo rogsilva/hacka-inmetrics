@@ -3,6 +3,9 @@ package br.com.inoutcomes.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.inoutcomes.beans.DataSource;
+import facebook4j.FacebookException;
+import facebook4j.internal.org.json.JSONException;
 import twitter4j.Paging;
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -13,7 +16,8 @@ import twitter4j.TwitterFactory;
 import twitter4j.User;
 import twitter4j.conf.ConfigurationBuilder;
 
-public class TwitterService {
+public class TwitterService implements ServiceInterface
+{
 	private Twitter twitter;
 
 	public TwitterService() {
@@ -118,6 +122,17 @@ public class TwitterService {
 			count += s.getFavoriteCount();
 		}
 		return count;
+	}
+
+	public DataSource getDataSource(String term) throws FacebookException, JSONException 
+	{
+		DataSource source = new DataSource();
+		source.setName("Twitter");
+		
+		source.setLikesPage(this.getFollowersCount(term));
+		source.setLikesPost(this.getHeartAmount(term, 100));
+		
+		return source;
 	}
 	
 	
