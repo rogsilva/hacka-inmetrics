@@ -13,19 +13,23 @@ public class FrameworkBO
 		
 	}
 	
-	public List<DataSource> process(String pageName) throws Exception
+	public List<DataSource> process(String pageNameF, String pageNameT) throws Exception
 	{
-		if(pageName.equals("") || pageName.isEmpty()){
-			throw new IllegalArgumentException("Obrigatório o nome da página");
+		if(pageNameF.equals("") || pageNameF.isEmpty()){
+			throw new IllegalArgumentException("Obrigatório o nome da página do Facebook");
 		}	
+		
+		if(pageNameT.equals("") || pageNameT.isEmpty()){
+			throw new IllegalArgumentException("Obrigatório o nome da página do Twitter");
+		}
 		
 		List<DataSource> list = new ArrayList<DataSource>();
 		
 		FacebookService facebook = new FacebookService();
-		list.add(facebook.getDataSource(pageName));
+		list.add(facebook.getDataSource(pageNameF));
 		
 		TwitterService twitter = new TwitterService();
-		list.add(twitter.getDataSource(pageName));
+		list.add(twitter.getDataSource(pageNameT));
 		
 		return list;
 	}
