@@ -41,6 +41,11 @@
         		<div id="grafico4"></div>
         	</div>
         </div>
+        <div class="row">
+        	<div class="col-lg-12 text-capitalize">
+        		<div id="grafico5"></div>
+        	</div>
+       	</div>
         <!-- /.row -->
         
     </div>
@@ -57,9 +62,9 @@ google.setOnLoadCallback(drawChart1);
 function drawChart1() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['${twitter2.name}',     ${twitter2.likesPage}],
-    ['${facebook2.name}',     ${facebook2.likesPage}]
+    ['Task', 'Percent'],
+    ['${twitter2.name}',     parseInt('${twitter2.likesPage}')],
+    ['${facebook2.name}',     parseInt('${facebook2.likesPage}')]
   ]);
 
   var options = {
@@ -76,9 +81,9 @@ google.setOnLoadCallback(drawChart2);
 function drawChart2() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['${twitter2.name}',     ${twitter2.likesPost}],
-    ['${facebook2.name}',     ${facebook2.likesPost}]
+    ['Task', 'Percent'],
+    ['${twitter2.name}',     parseInt('${twitter2.likesPost}')],
+    ['${facebook2.name}',     parseInt('${facebook2.likesPost}')]
   ]);
 
   var options = {
@@ -95,9 +100,9 @@ google.setOnLoadCallback(drawChart3);
 function drawChart3() {
 
   var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['${twitter1.name}',     ${twitter1.likesPage}],
-    ['${facebook1.name}',     ${facebook1.likesPage}]
+    ['Task', 'Percent'],
+    ['${twitter1.name}',     parseInt('${twitter1.likesPage}')],
+    ['${facebook1.name}',     parseInt('${facebook1.likesPage}')]
   ]);
 
   var options = {
@@ -114,9 +119,9 @@ google.setOnLoadCallback(drawChart4);
 function drawChart4() {
 
 	var data = google.visualization.arrayToDataTable([
-	['Task', 'Hours per Day'],
-	['${twitter1.name}',     ${twitter1.likesPost}],
-	['${facebook1.name}',     ${facebook1.likesPost}]
+	['Task', 'Percent'],
+	['${twitter1.name}',     parseInt('${twitter1.likesPost}')],
+	['${facebook1.name}',     parseInt('${facebook1.likesPost}')]
 ]);
 
   var options = {
@@ -127,6 +132,43 @@ function drawChart4() {
 
   chart.draw(data, options);
 }
+
+//Grafico5
+ google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Busca', 'Posts', 'Pages'],
+          ['${facebookName1}', parseInt('${facebook1.likesPost}'), parseInt('${facebook1.likesPage}')],
+          ['${twitterName1}', parseInt('${twitter1.likesPost}'), parseInt('${twitter1.likesPage}')] ,
+          ['${facebookName2}', parseInt('${facebook2.likesPost}'),parseInt('${facebook2.likesPage}')],
+          ['${twitterName2}', parseInt('${twitter2.likesPost}'), parseInt('${twitter2.likesPage}')]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Comparação Geral',
+            subtitle: '',
+          },
+          bars: 'horizontal', // Required for Material Bar Charts.
+          hAxis: {format: 'decimal'},
+          height: 400,
+          colors: ['#1b9e77', '#d95f02']
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('grafico5'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+
+        var btns = document.getElementById('btn-group');
+
+        btns.onclick = function (e) {
+
+          if (e.target.tagName === 'BUTTON') {
+            options.hAxis.format = e.target.id === 'none' ? '' : e.target.id;
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+          }
+        }
+      }
 </script>
 <c:import url="includes/footer.jsp" />
     

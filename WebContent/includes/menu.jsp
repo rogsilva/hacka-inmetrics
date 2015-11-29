@@ -36,7 +36,7 @@
                 <ul class="nav navbar-nav side-nav">
                     
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Social Mídia</a>
+                        <a href="index.jsp"><i class="fa fa-fw fa-bar-chart-o"></i> Social Mídia</a>
                     </li>
                     
                 </ul>
