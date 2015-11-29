@@ -13,11 +13,11 @@ public class getHeartAmount {
 		
 		TwitterService ts = new TwitterService();
 		
-		int num = ts.getHeartAmount("Corinthians", 100);
+		int num = ts.getHeartAmount("McDonalds_BR", 100);
 		
 		System.out.println(num);
 		
-		System.out.println(ts.getFollowersCount("Corinthians"));
+		System.out.println(ts.getFollowersCount("McDonalds_BR"));
 		
 		
 		

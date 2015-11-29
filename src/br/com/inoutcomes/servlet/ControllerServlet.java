@@ -19,7 +19,7 @@ public class ControllerServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String parametro = request.getParameter("logica");
-		String nomeDaClasse = "br.com.fiap.inovati.logica." + parametro;
+		String nomeDaClasse = "br.com.inoutcomes.logica." + parametro;
 
 		try {
 			Class classe = Class.forName(nomeDaClasse);
