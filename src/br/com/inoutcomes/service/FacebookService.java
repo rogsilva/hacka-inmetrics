@@ -21,7 +21,7 @@ public class FacebookService implements ServiceInterface
 {
 	private Date data;
 	private Facebook facebook;
-	private String token = "CAALtnVgiFHMBAJXFOL9XYKLox5GPm1YU8Q4ynq01qZBs9csTZBKbHStrUkM4JnzixoEmeJOjxkr1rF9hkCLlji1xNsgYKElm6Ee8oalpRr1UrvOU4FyZCmOMtIqcnP7wi0UpohCinYBBz6D6vQUdWlGmBMXgOaZAl82oYm72BjvpYT6zD1tq1ZCEcC5YL3EDLb17yuz15eJ8ynzGUbjvX";
+	private String token = "CAALtnVgiFHMBANDHoBzeBiOijbM5l6RQG5IqgQ0I9ta1VkWPlCCxOZBqYZAPtexZAlUfHlNV2O5w1K3tSOzgyZAz7hr73dn9i1GkZBNwq6j5JQzXplD0ULSZC0e7XtTZCYrO9gfEfvXreK95YTJQQU2H2qjhZAjVfZAXVtLSEr1cqvlMB9Ec5QZAqLmqrfGn82bFMdtpuIKB3ZBDhoBCCgf6ZAl9";
 	
 	public FacebookService() throws Exception
 	{

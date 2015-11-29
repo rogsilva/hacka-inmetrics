@@ -24,7 +24,8 @@
             </div>
         </div>        
         <!-- /.row -->
-        <form action="#" method="post" role="form" class="horizontal-form">
+        <form action="Controller" method="post" role="form" class="horizontal-form">
+        <input type="hidden" name="logica" value="Step2"/>
 	        <div class="row">
 	        	<div class="col-lg-12">
 	        		<h2 class="page-header">
@@ -51,15 +52,25 @@
 	        </div>
 	        <div class="row">
 	        	<div class="col-lg-6">
+	        		<h3>Termo 1</h3>
 	        		<div class="form-group">
-					    <label for="facebookName">Facebook</label>
-					    <input type="text" class="form-control" id="facebookName" name="facebookName" placeholder="Nome da página">
+					    <label for="facebookName1">Facebook</label>
+					    <input type="text" class="form-control" id="facebookName1" name="facebookName1" placeholder="Nome da página">
+				  	</div>
+				  	<div class="form-group">
+					    <label for="twitterName1">Twitter</label>
+					    <input type="text" class="form-control" id="twitterName1" name="twitterName1" placeholder="Nome da página">
 				  	</div>
 	        	</div>
 	        	<div class="col-lg-6">
+	        		<h3>Termo 2</h3>
 	        		<div class="form-group">
-					    <label for="twitterName">Twitter</label>
-					    <input type="text" class="form-control" id="twitterName" name="twitterName" placeholder="Nome da página">
+					    <label for="facebookName2">Facebook</label>
+					    <input type="text" class="form-control" id="facebookName2" name="facebookName1" placeholder="Nome da página">
+				  	</div>
+				  	<div class="form-group">
+					    <label for="twitterName2">Twitter</label>
+					    <input type="text" class="form-control" id="twitterName2" name="twitterName2" placeholder="Nome da página">
 				  	</div>
 	        	</div>
 	        </div>

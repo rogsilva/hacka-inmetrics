@@ -29,7 +29,7 @@
         <div class="row">
         	<div class="col-lg-12">
         		<h2 class="page-header">
-                    Resultado da Busca
+                    Resultado da Busca <c:out value='${facebookName1}'/>
                 </h2>
         	</div>
         </div>
@@ -46,6 +46,14 @@
         	<div class="col-lg-6">
         		<div id="grafico3"></div>
         	</div>
+        	<div class="col-lg-6">
+        		<div id="grafico4"></div>
+        	</div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-6">
+        		<div id="grafico5"></div>
+        	</div>
         </div>
         <!-- /.row -->
         
@@ -58,91 +66,93 @@
 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['geochart']}]}"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}"></script>
 <script>
-google.setOnLoadCallback(drawSeriesChart);
-
-function drawSeriesChart() {
+//Grafico 1
+google.setOnLoadCallback(drawChart1);
+function drawChart1() {
 
   var data = google.visualization.arrayToDataTable([
-    ['ID', 'Burger King', 'Fertility Rate', 'Region',     'Population'],
-    ['CAN',    80.66,              1.67,      'North America',  33739900],
-    ['DEU',    79.84,              1.36,      'Europe',         81902307],
-    ['DNK',    78.6,               1.84,      'Europe',         5523095],
-    ['EGY',    72.73,              2.78,      'Middle East',    79716203],
-    ['GBR',    80.05,              2,         'Europe',         61801570],
-    ['IRN',    72.49,              1.7,       'Middle East',    73137148],
-    ['IRQ',    68.09,              4.77,      'Middle East',    31090763],
-    ['ISR',    81.55,              2.96,      'Middle East',    7485600],
-    ['RUS',    68.6,               1.54,      'Europe',         141850000],
-    ['USA',    78.09,              2.05,      'North America',  307007000]
+    ['Task', 'Hours per Day'],
+    ['Work',     11],
+    ['Eat',      2],
+    ['Commute',  2],
+    ['Watch TV', 2],
+    ['Sleep',    7]
   ]);
 
   var options = {
-    title: 'Correlation between life expectancy, fertility rate and population of some world countries (2010)',
-    hAxis: {title: 'Life Expectancy'},
-    vAxis: {title: 'Fertility Rate'},
-    bubble: {textStyle: {fontSize: 11}}
+    title: '${facebookName1}'
   };
 
-  var chart = new google.visualization.BubbleChart(document.getElementById('grafico1'));
+  var chart = new google.visualization.PieChart(document.getElementById('grafico1'));
+
   chart.draw(data, options);
 }
 
-//Mapa
-google.setOnLoadCallback(drawMarkersMap);
+//Grafico 2
+google.setOnLoadCallback(drawChart2);
+function drawChart2() {
 
-      function drawMarkersMap() {
-      var data = google.visualization.arrayToDataTable([
-        ['City',   'Population', 'Area'],
-        ['Rome',      2761477,    1285.31],
-        ['Milan',     1324110,    181.76],
-        ['Naples',    959574,     117.27],
-        ['Turin',     907563,     130.17],
-        ['Palermo',   655875,     158.9],
-        ['Genoa',     607906,     243.60],
-        ['Bologna',   380181,     140.7],
-        ['Florence',  371282,     102.41],
-        ['Fiumicino', 67370,      213.44],
-        ['Anzio',     52192,      43.43],
-        ['Sao Paulo',     150000,      43.43],
-        ['Ciampino',  38262,      11]
-      ]);
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Work',     11],
+    ['Eat',      2],
+    ['Commute',  2],
+    ['Watch TV', 2],
+    ['Sleep',    7]
+  ]);
 
-      var options = {
-        region: 'BR',
-        displayMode: 'markers',
-        colorAxis: {colors: ['green', 'blue']}
-      };
+  var options = {
+    title: '${twitterName1}'
+  };
 
-      var chart = new google.visualization.GeoChart(document.getElementById('grafico2'));
-      chart.draw(data, options);
-    };
+  var chart = new google.visualization.PieChart(document.getElementById('grafico2'));
 
-//Barras
-google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Fonte', 'like face', 'like posts face', 'like twitter', 'like twitter posts'],
-          ['2014', 1000, 400, 200, 2999],
-          ['2015', 1170, 460, 250, 1222],
+  chart.draw(data, options);
+}
 
-        ]);
+//Grafico 3
+google.setOnLoadCallback(drawChart3);
+function drawChart3() {
 
-        var options = {
-          chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-          },
-          bars: 'horizontal', // Required for Material Bar Charts.
-          hAxis: {format: 'decimal'},
-          height: 400,
-          colors: ['#1b9e77', '#d95f02', '#7570b3', '#7570b4']
-        };
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Work',     11],
+    ['Eat',      2],
+    ['Commute',  2],
+    ['Watch TV', 2],
+    ['Sleep',    7]
+  ]);
 
-        var chart = new google.charts.Bar(document.getElementById('grafico3'));
+  var options = {
+    title: 'My Daily Activities'
+  };
 
-        chart.draw(data, google.charts.Bar.convertOptions(options));
+  var chart = new google.visualization.PieChart(document.getElementById('grafico3'));
 
-      }
+  chart.draw(data, options);
+}
+
+//Grafico 4
+google.setOnLoadCallback(drawChart4);
+function drawChart4() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Work',     11],
+    ['Eat',      2],
+    ['Commute',  2],
+    ['Watch TV', 2],
+    ['Sleep',    7]
+  ]);
+
+  var options = {
+    title: 'My Daily Activities'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('grafico4'));
+
+  chart.draw(data, options);
+}
 </script>
 <c:import url="includes/footer.jsp" />
     

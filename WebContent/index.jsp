@@ -31,7 +31,8 @@
         	</div>
         </div>
         <!-- /.row -->
-        <form action="#" method="post" role="form" class="horizontal-form">
+        <form action="Controller" method="post" role="form" class="horizontal-form">
+        	<input type="hidden" name="logica" value="StartHacka"/>
 	        <div class="row">
 	        	<div class="col-lg-6">
 	        		<h3>Quais sites?</h3>
