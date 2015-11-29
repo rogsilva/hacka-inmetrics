@@ -31,8 +31,8 @@ public class FacebookService implements ServiceInterface
 		this.facebook = new FacebookFactory().getInstance();
 		this.facebook.setOAuthAppId(appId, appSecret);				
 		this.facebook.setOAuthPermissions("public_profile, basic_info, read_stream, read_mailbox, read_page_mailboxes, rsvp_event, email, read_insights, manage_notifications, read_friendlists, manage_pages, publish_actions, user_birthday, user_religion_politics, user_relationships, user_relationship_details, user_hometown, user_location, user_likes, user_activities, user_interests, user_education_history, user_work_history, user_website, user_groups, user_events, user_photos, user_videos, user_friends, user_about_me, user_status, user_games_activity, user_tagged_places, user_actions.books, user_actions.music, user_actions.video, user_actions.news");
-			
-		this.facebook.setOAuthAccessToken(new AccessToken(this.token, null));
+		AccessToken extendedToken = facebook.extendTokenExpiration(this.token);
+		this.facebook.setOAuthAccessToken(extendedToken);
 	}
 	
 	public ResponseList<Post> getPost(String term) throws FacebookException
