@@ -31,14 +31,14 @@
         	</div>
         </div>
         <!-- /.row -->
-        <form action="Controller" method="post" role="form" class="horizontal-form">
+        <form action="Controller" method="post" role="form" class="horizontal-form" id="formSocial">
         	<input type="hidden" name="logica" value="StartHacka"/>
 	        <div class="row">
-	        	<div class="col-lg-6">
+	        	<div class="col-lg-3">
 	        		<h3>Quais sites?</h3>
 	        		<div class="checkbox">
 					    <label>
-					      <input name="facebook" value="1" type="checkbox"><img src="assets/images/icon-facebook.png" width="30" alt="Facebook"/> Facebook
+					      <input name="facebook" value="1" checked="checked" required="required" type="checkbox"><img src="assets/images/icon-facebook.png" width="30" alt="Facebook"/> Facebook
 					    </label>
 				  	</div>
 				  	<div class="checkbox">
@@ -48,7 +48,7 @@
 				  	</div>
 				  	<div class="checkbox">
 					    <label>
-					      <input name="twitter" value="1" type="checkbox"><img src="assets/images/icon-twitter.png" width="30" alt="Twitter"/> Twitter
+					      <input name="twitter" value="1" checked="checked" required="required" type="checkbox"><img src="assets/images/icon-twitter.png" width="30" alt="Twitter"/> Twitter
 					    </label>
 				  	</div>
 				  	<div class="checkbox">
@@ -57,26 +57,27 @@
 					    </label>
 				  	</div>
 	        	</div>
-	        	<div class="col-lg-6">
+	        	<div class="col-lg-3">
 	        		<h3>Quais dados?</h3>
 	        		
 	        		<div class="checkbox">
 					    <label>
-					      <input name="curtidas" value="1" type="checkbox"> Curtidas
+					      <input name="curtidas" value="1" checked="checked" type="checkbox"> Curtidas
 					    </label>
 				  	</div>
 				  	<div class="checkbox">
 					    <label>
-					      <input name="compartilhamentos" value="1" type="checkbox"> Compartilhamentos
+					      <input name="compartilhamentos" value="1" disabled="disabled" type="checkbox"> Compartilhamentos
 					    </label>
 				  	</div>
 				  	<div class="checkbox">
 					    <label>
-					      <input name="seguidores" value="1" type="checkbox"> Seguidores
+					      <input name="seguidores" value="1" checked="checked" type="checkbox"> Seguidores
 					    </label>
 				  	</div>
 	        	</div>
 	        </div>
+	        <hr>
 	        <div class="row">
 	        	<div class="col-lg-12">
 	        		<button class="btn btn-success" type="submit">Avançar</button>
