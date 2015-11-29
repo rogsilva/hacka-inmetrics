@@ -39,7 +39,8 @@ public class Step2 implements Logica {
 			req.setAttribute("twitterName2", twitterName2);
 			
 		}catch(Exception e){
-			return e.getMessage();
+			req.setAttribute("error", e.getMessage());
+			return "social2.jsp";
 		}
 		
 		return "resultado.jsp";

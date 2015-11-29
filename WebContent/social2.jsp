@@ -24,10 +24,19 @@
             </div>
         </div>        
         <!-- /.row -->
-        <form action="Controller" method="post" role="form" class="horizontal-form">
+        <form action="Controller" method="post" role="form" id="form-step2" class="horizontal-form">
         <input type="hidden" name="logica" value="Step2"/>
 	        <div class="row">
 	        	<div class="col-lg-12">
+		        	<c:if test="${error != null}">
+		        		<div class="alert alert-danger" role="alert">
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							  	<span aria-hidden="true">&times;</span>							  	
+							</button>	        
+							<p><strong>Erro: </strong>${error}</p>		
+		        		</div>
+	        		</c:if>
+	        		
 	        		<h2 class="page-header">
 	                    Quando?
 	                </h2>
@@ -37,9 +46,9 @@
 	        	<div class="col-lg-6">
 	        		<div class="input-group input-daterange">
         				<span class="input-group-addon">De</span>
-					    <input type="text" class="form-control has-datepicker" value="2012-04-05">
+					    <input type="text" class="form-control has-datepicker" value="">
 					    <span class="input-group-addon">Até</span>
-					    <input type="text" class="form-control has-datepicker" value="2012-04-19">
+					    <input type="text" class="form-control has-datepicker" value="">
 					</div>
 	        	</div>	        	
 	        </div>
@@ -51,7 +60,7 @@
 	        	</div>
 	        </div>
 	        <div class="row">
-	        	<div class="col-lg-6">
+	        	<div class="col-lg-4">
 	        		<h3>Termo 1</h3>
 	        		<div class="form-group">
 					    <label for="facebookName1">Facebook</label>
@@ -62,7 +71,7 @@
 					    <input type="text" class="form-control" id="twitterName1" name="twitterName1" placeholder="Nome da página">
 				  	</div>
 	        	</div>
-	        	<div class="col-lg-6">
+	        	<div class="col-lg-4">
 	        		<h3>Termo 2</h3>
 	        		<div class="form-group">
 					    <label for="facebookName2">Facebook</label>
@@ -74,6 +83,7 @@
 				  	</div>
 	        	</div>
 	        </div>
+	        <hr>
 	        <div class="row">
 	        	<div class="col-lg-12">
 	        		<button class="btn btn-success" type="submit">Avançar</button>
@@ -89,6 +99,10 @@
 <script src="assets/js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+		$("#form-step2").on('submit', function(){
+			$("#loading").show();
+		});
+		
 		$(".has-datepicker").datepicker({
 		    dateFormat: 'dd/mm/yy',
 		    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
@@ -101,10 +115,6 @@
 		});
 		$('.has-datepicker').datepicker();
 	});
-</script>
-<!--
-
-//-->
 </script>
         
 <c:import url="includes/footer.jsp" />
