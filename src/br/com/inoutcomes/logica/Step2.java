@@ -20,7 +20,7 @@ public class Step2 implements Logica {
 
 	// atributos estáticos da palavra pesquisada
 	private static String facebookName1;
-	private static String twitterName1;;
+	private static String twitterName1;
 	private static String facebookName2;
 	private static String twitterName2;
 

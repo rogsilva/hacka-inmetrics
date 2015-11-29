@@ -18,6 +18,30 @@
                 </h2>
         	</div>
         </div>
+        
+        <!--  ##TESTE
+          
+        	<div><h1>twitter1.name = ${twitter1.name}</h1></div>
+            <div><h1>twitter1.likesPage = ${twitter1.likesPage}</h1></div>
+            <div><h1>twitter1.likesPost = ${twitter1.likesPost}</h1></div>
+            
+            <div><h1>twitter2.name = ${twitter2.name}</h1></div>
+            <div><h1>twitter2.likesPage = ${twitter2.likesPage}</h1></div>
+            <div><h1>twitter2.likesPost = ${twitter2.likesPost}</h1></div>
+            
+            
+            
+            <div><h1>facebook1.name = ${facebook1.name}</h1></div>
+            <div><h1>facebook1.likesPage = ${facebook1.likesPage}</h1></div>
+            <div><h1>facebook1.likesPost = ${facebook1.likesPost}</h1></div>
+            
+            <div><h1>facebook2.name = ${facebook2.name}</h1></div>
+            <div><h1>facebook2.likesPage = ${facebook2.likesPage}</h1></div>
+            <div><h1>facebook2.likesPost = ${facebook2.likesPost}</h1></div>
+            
+            -->
+            
+            
         <!-- /.row -->
         <div class="row" >
        		 <div class="col-lg-1 text-capitalize" >
@@ -69,7 +93,7 @@ function drawChart1() {
 
   var options = {
     title: 'Followers',
-    colors: ['#FFFF00', '#0000FF']
+    //colors: ['#FFFF00', '#0000FF']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico1'));
@@ -89,7 +113,7 @@ function drawChart2() {
 
   var options = {
     title: 'Recent Likes',
-    colors: ['#FFFF00', '#0000FF']
+    //colors: ['#FFFF00', '#0000FF']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico2'));
@@ -109,7 +133,7 @@ function drawChart3() {
 
   var options = {
     title: 'Followers',
-    colors: ['#FFFF00', '#0000FF']
+    //colors: ['#FFFF00', '#0000FF']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico3'));
@@ -129,7 +153,7 @@ function drawChart4() {
 
   var options = {
     title: 'Recent Likes',
-    colors: ['#FFFF00', '#0000FF']
+    //colors: ['#FFFF00', '#0000FF']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico4'));
@@ -156,7 +180,7 @@ function drawChart4() {
           bars: 'horizontal', // Required for Material Bar Charts.
           hAxis: {format: 'decimal'},
           height: 400,
-          colors: ['#0000FF', '#FFFF00']
+          //colors: ['#0000FF', '#FFFF00']
         };
 
         var chart = new google.charts.Bar(document.getElementById('grafico5'));
