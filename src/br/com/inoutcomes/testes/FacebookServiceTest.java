@@ -17,6 +17,8 @@ public class FacebookServiceTest {
 			
 			
 			ResponseList<Page> pages = fs.getPages("Burguer King Brasil");
+			
+			
 			for (Page page : pages){
 				System.out.println("----------PAGE---------");
 				System.out.println(page.getName());
