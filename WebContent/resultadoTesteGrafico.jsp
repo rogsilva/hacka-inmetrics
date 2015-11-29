@@ -12,6 +12,47 @@
 
         <!-- Page Heading -->
         <div class="row">
+            <div class="col-lg-12">                
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-fw fa-bar-chart-o"></i>  <a href="index.jsp">Social Mídia</a>
+                    </li>
+                    <li class="active">
+                         Parâmetros
+                    </li>
+                    <li class="active">
+                         Resultado
+                    </li>
+                </ol>
+            </div>
+            
+            
+            <!-- 
+            
+            <div><h1>twitter1.name = ${twitter1.name}</h1></div>
+            <div><h1>twitter1.likesPage = ${twitter1.likesPage}</h1></div>
+            <div><h1>twitter1.likesPost = ${twitter1.likesPost}</h1></div>
+            
+            <div><h1>twitter2.name = ${twitter2.name}</h1></div>
+            <div><h1>twitter2.likesPage = ${twitter2.likesPage}</h1></div>
+            <div><h1>twitter2.likesPost = ${twitter2.likesPost}</h1></div>
+            
+            
+            
+            <div><h1>facebook1.name = ${facebook1.name}</h1></div>
+            <div><h1>facebook1.likesPage = ${facebook1.likesPage}</h1></div>
+            <div><h1>facebook1.likesPost = ${facebook1.likesPost}</h1></div>
+            
+            <div><h1>facebook2.name = ${facebook2.name}</h1></div>
+            <div><h1>facebook2.likesPage = ${facebook2.likesPage}</h1></div>
+            <div><h1>facebook2.likesPost = ${facebook2.likesPost}</h1></div>
+            
+             -->
+            
+            
+            
+        </div>
+        <div class="row">
         	<div class="col-lg-12">
         		<h2 class="page-header">
                     Resultado da Busca
@@ -20,7 +61,7 @@
         </div>
         <!-- /.row -->
         <div class="row" >
-       		 <div class="col-lg-1 text-capitalize" >
+       		 <div class="col-lg-1" >
         		<span style='float: left; margin-top: 30%'><h3><strong>${facebookName1}</strong></h3></span>
         	</div>
         	<div class="col-lg-5">
@@ -31,7 +72,7 @@
         	</div>
         </div>
         <div class="row">
-        	<div class="col-lg-1 text-capitalize">
+        	<div class="col-lg-1 centered">
         		<span style='float: left; margin-top: 30%'><h3><strong>${facebookName2}</strong></h3></span>
         	</div>
         	<div class="col-lg-5">
@@ -40,6 +81,8 @@
         	<div class="col-lg-6">
         		<div id="grafico4"></div>
         	</div>
+        </div>
+   
         </div>
         <!-- /.row -->
         
@@ -52,6 +95,9 @@
 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['geochart']}]}"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['bar']}]}"></script>
 <script>
+
+
+
 //Grafico 1
 google.setOnLoadCallback(drawChart1);
 function drawChart1() {
@@ -127,6 +173,8 @@ function drawChart4() {
 
   chart.draw(data, options);
 }
+
+
 </script>
 <c:import url="includes/footer.jsp" />
     

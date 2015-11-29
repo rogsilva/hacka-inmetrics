@@ -13,11 +13,23 @@ public class getHeartAmount {
 		
 		TwitterService ts = new TwitterService();
 		
-		int num = ts.getHeartAmount("McDonalds_BR", 100);
+		int num = ts.getHeartAmount("BurgerKingBR", 4);
+		System.out.println("hearAmount: "+num);
+
 		
-		System.out.println(num);
 		
-		System.out.println(ts.getFollowersCount("McDonalds_BR"));
+		List<Status> listaStatusTwitter = ts.getLastNStatuses("BurgerKingBR", 4);
+		
+		for(Status s: listaStatusTwitter){
+			System.out.println(s.getText());
+			System.out.println(s.getFavoriteCount());
+			System.out.println(s.getId());
+			System.out.println("");
+		}
+		
+		
+		
+		
 		
 		
 		
