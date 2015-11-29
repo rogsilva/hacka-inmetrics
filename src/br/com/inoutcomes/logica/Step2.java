@@ -24,13 +24,14 @@ public class Step2 implements Logica {
 			DataSource facebook1 = fbo.process(facebookName1);
 			DataSource twitter1 = tbo.process(twitterName1);
 			
-			//DataSource facebook2 = fbo.process(facebookName2);
-			//DataSource twitter2 = tbo.process(twitterName2);
+			DataSource facebook2 = fbo.process(facebookName2);
+			DataSource twitter2 = tbo.process(twitterName2);
 			
 			req.setAttribute("facebook1", facebook1);
 			req.setAttribute("twitter1", twitter1);
-			//req.setAttribute("facebook2", facebook2);
-			//req.setAttribute("twitter2", twitter2);
+			req.setAttribute("facebook2", facebook2);
+			req.setAttribute("twitter2", twitter2);
+			
 			
 			req.setAttribute("facebookName1", facebookName1);
 			req.setAttribute("twitterName1", twitterName1);

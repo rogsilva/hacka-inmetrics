@@ -66,7 +66,7 @@
 	        		<h3>Termo 2</h3>
 	        		<div class="form-group">
 					    <label for="facebookName2">Facebook</label>
-					    <input type="text" class="form-control" id="facebookName2" name="facebookName1" placeholder="Nome da página">
+					    <input type="text" class="form-control" id="facebookName2" name="facebookName2" placeholder="Nome da página">
 				  	</div>
 				  	<div class="form-group">
 					    <label for="twitterName2">Twitter</label>

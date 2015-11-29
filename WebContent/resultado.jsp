@@ -29,7 +29,7 @@
         <div class="row">
         	<div class="col-lg-12">
         		<h2 class="page-header">
-                    Resultado da Busca <c:out value='${facebookName1}'/>
+                    Resultado da Busca
                 </h2>
         	</div>
         </div>
@@ -124,7 +124,7 @@ function drawChart3() {
   ]);
 
   var options = {
-    title: 'My Daily Activities'
+    title: '${facebookName2}'
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico3'));
@@ -146,7 +146,7 @@ function drawChart4() {
   ]);
 
   var options = {
-    title: 'My Daily Activities'
+    title: '${twitterName2}'
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico4'));

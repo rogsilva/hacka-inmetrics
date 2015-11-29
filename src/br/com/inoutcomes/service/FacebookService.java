@@ -21,7 +21,7 @@ public class FacebookService implements ServiceInterface
 {
 	private Date data;
 	private Facebook facebook;
-	private String token = "CAALtnVgiFHMBANDHoBzeBiOijbM5l6RQG5IqgQ0I9ta1VkWPlCCxOZBqYZAPtexZAlUfHlNV2O5w1K3tSOzgyZAz7hr73dn9i1GkZBNwq6j5JQzXplD0ULSZC0e7XtTZCYrO9gfEfvXreK95YTJQQU2H2qjhZAjVfZAXVtLSEr1cqvlMB9Ec5QZAqLmqrfGn82bFMdtpuIKB3ZBDhoBCCgf6ZAl9";
+	private String token = "CAALtnVgiFHMBAHFEOKf0u1HTZBqy27M2jSNE0squsWnKZAJyCMzXCcMlWifRYFQCu6zSwUiZAkc5nUMm7dZCBY2RQFNbCtERhM0Q21DWMFckVD2yia6cyEsFEGNoUvizvjz8LLHKPkhkht1Vvc1M1lHXJzWZCZC6ZC4QiAXJjhpThPBGNF18qZCQMmWBGKpKohmGVZCJktTSnlhnpvcZArvbJW";
 	
 	public FacebookService() throws Exception
 	{
@@ -31,9 +31,8 @@ public class FacebookService implements ServiceInterface
 		this.facebook = new FacebookFactory().getInstance();
 		this.facebook.setOAuthAppId(appId, appSecret);				
 		this.facebook.setOAuthPermissions("public_profile, basic_info, read_stream, read_mailbox, read_page_mailboxes, rsvp_event, email, read_insights, manage_notifications, read_friendlists, manage_pages, publish_actions, user_birthday, user_religion_politics, user_relationships, user_relationship_details, user_hometown, user_location, user_likes, user_activities, user_interests, user_education_history, user_work_history, user_website, user_groups, user_events, user_photos, user_videos, user_friends, user_about_me, user_status, user_games_activity, user_tagged_places, user_actions.books, user_actions.music, user_actions.video, user_actions.news");
-		//this.facebook.setOAuthPermissions("public_profile");
-		
-		this.facebook.setOAuthAccessToken(new AccessToken(this.token));
+			
+		this.facebook.setOAuthAccessToken(new AccessToken(this.token, null));
 	}
 	
 	public ResponseList<Post> getPost(String term) throws FacebookException

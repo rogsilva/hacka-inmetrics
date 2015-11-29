@@ -28,8 +28,8 @@ public class FacebookServiceTest {
 				ResponseList<Post> posts = fs.getPost(page.getId().toString());
 				for (Post post : posts){
 					System.out.println(post.getName());
-					fs.getTotalLikes(post.getId());
-					System.out.println("\n");
+					long total = fs.getTotalLikes(post.getId());
+					System.out.println(total+"\n");
 				}
 				System.out.println("-------------------");
 				System.out.println("\n");
