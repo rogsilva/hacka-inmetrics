@@ -68,7 +68,8 @@ function drawChart1() {
   ]);
 
   var options = {
-    title: 'Followers'
+    title: 'Followers',
+    colors: ['#FFFF00', '#0000FF']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico1'));
@@ -87,7 +88,8 @@ function drawChart2() {
   ]);
 
   var options = {
-    title: 'Recent Likes'
+    title: 'Recent Likes',
+    colors: ['#FFFF00', '#0000FF']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico2'));
@@ -106,7 +108,8 @@ function drawChart3() {
   ]);
 
   var options = {
-    title: 'Followers'
+    title: 'Followers',
+    colors: ['#FFFF00', '#0000FF']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico3'));
@@ -125,7 +128,8 @@ function drawChart4() {
 ]);
 
   var options = {
-    title: 'Recent Likes'
+    title: 'Recent Likes',
+    colors: ['#FFFF00', '#0000FF']
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('grafico4'));
@@ -137,11 +141,11 @@ function drawChart4() {
  google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Busca', 'Posts', 'Pages'],
-          ['${facebookName1}', parseInt('${facebook1.likesPost}'), parseInt('${facebook1.likesPage}')],
-          ['${twitterName1}', parseInt('${twitter1.likesPost}'), parseInt('${twitter1.likesPage}')] ,
-          ['${facebookName2}', parseInt('${facebook2.likesPost}'),parseInt('${facebook2.likesPage}')],
-          ['${twitterName2}', parseInt('${twitter2.likesPost}'), parseInt('${twitter2.likesPage}')]
+          ['Busca', 'Likes por Posts', 'Likes por Pages'],
+          ['${facebookName1} \n ${facebook1.name}', parseInt('${facebook1.likesPost}'), parseInt('${facebook1.likesPage}')],
+          ['${twitterName1} \n  ${twitter1.name}', parseInt('${twitter1.likesPost}'), parseInt('${twitter1.likesPage}')] ,
+          ['${facebookName2} \n  ${facebook2.name}', parseInt('${facebook2.likesPost}'),parseInt('${facebook2.likesPage}')],
+          ['${twitterName2} \n  ${twitter2.name}', parseInt('${twitter2.likesPost}'), parseInt('${twitter2.likesPage}')]
         ]);
 
         var options = {
@@ -152,7 +156,7 @@ function drawChart4() {
           bars: 'horizontal', // Required for Material Bar Charts.
           hAxis: {format: 'decimal'},
           height: 400,
-          colors: ['#1b9e77', '#d95f02']
+          colors: ['#0000FF', '#FFFF00']
         };
 
         var chart = new google.charts.Bar(document.getElementById('grafico5'));
